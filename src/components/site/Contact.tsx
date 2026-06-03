@@ -1,19 +1,20 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Linkedin, Github, MessageCircle, Phone, Loader2, CheckCircle2 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { MagneticButton } from "./MagneticButton";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
-const contacts = [
-  { Icon: Mail, label: "Email", value: "sepehrjokanian99@gmail.com", href: "mailto:sepehrjokanian99@gmail.com" },
-  { Icon: MessageCircle, label: "WhatsApp", value: "+37493564383", href: "https://wa.me/37493564383" },
-  { Icon: Phone, label: "Call", value: "+37493564383", href: "tel:+37493564383" },
-  { Icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/sepehr-jo", href: "https://www.linkedin.com/in/sepehr-jo/" },
-  { Icon: Github, label: "GitHub", value: "github.com/sepehrjo", href: "https://github.com/sepehrjo" },
-];
-
 export function Contact() {
+  const { t } = useTranslation();
+  const contacts = [
+    { Icon: Mail, label: t("contact.email"), value: "sepehrjokanian99@gmail.com", href: "mailto:sepehrjokanian99@gmail.com" },
+    { Icon: MessageCircle, label: t("contact.whatsapp"), value: "+37493564383", href: "https://wa.me/37493564383" },
+    { Icon: Phone, label: t("contact.call"), value: "+37493564383", href: "tel:+37493564383" },
+    { Icon: Linkedin, label: t("contact.linkedin"), value: "linkedin.com/in/sepehr-jo", href: "https://www.linkedin.com/in/sepehr-jo/" },
+    { Icon: Github, label: t("contact.github"), value: "github.com/sepehrjo", href: "https://github.com/sepehrjo" },
+  ];
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -77,15 +78,15 @@ export function Contact() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-xl rounded-xl border border-accent/30 bg-bg-card p-10 text-center">
             <CheckCircle2 size={40} className="mx-auto text-accent" />
-            <h2 className="font-display mt-6 text-3xl font-bold">Got it.</h2>
+            <h2 className="font-display mt-6 text-3xl font-bold">{t("contact.success.title")}</h2>
             <p className="mt-3 text-text-secondary">
-              I'll review your brief and respond within 24 hours. If it sounds like a good fit, I'll suggest a time for a quick call.
+              {t("contact.success.description")}
             </p>
             <button
               onClick={() => setStatus("idle")}
               className="mt-8 rounded-md border border-[var(--border)] bg-bg px-4 py-2 text-sm text-text-secondary transition-colors hover:text-text-primary"
             >
-              Send another inquiry
+              {t("contact.success.sendAnother")}
             </button>
           </div>
         </div>
@@ -102,11 +103,10 @@ export function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="font-mono-ui text-sm text-accent">// let's talk</div>
-          <h2 className="font-display mt-4 text-4xl font-bold md:text-5xl">Ready to Build Something?</h2>
+          <div className="font-mono-ui text-sm text-accent">// {t("contact.label")}</div>
+          <h2 className="font-display mt-4 text-4xl font-bold md:text-5xl">{t("contact.title")}</h2>
           <p className="mt-4 max-w-2xl text-base text-text-secondary md:text-lg">
-            Whether you're an agency looking for a reliable subcontractor or a company that needs a better product —
-            I respond to every message within 24 hours.
+            {t("contact.description")}
           </p>
         </motion.div>
 
@@ -119,7 +119,7 @@ export function Contact() {
             transition={{ duration: 0.6 }}
           >
             <div className="font-mono-ui text-xs uppercase tracking-wider text-text-tertiary">
-              Contact me directly:
+              {t("contact.directLabel")}
             </div>
             <div className="mt-6 space-y-5">
               {contacts.map((c) => (
@@ -142,7 +142,7 @@ export function Contact() {
             </div>
 
             <p className="mt-6 text-xs text-text-tertiary">
-              "I check messages personally — not a bot, not a VA."
+              "{t("contact.personalNote")}"
             </p>
           </motion.div>
 
@@ -156,12 +156,12 @@ export function Contact() {
             className="rounded-xl border border-[var(--border)] bg-bg-card p-6 md:p-8"
           >
             <div className="space-y-4">
-              <Field label="Your name" name="name" value={formData.name} onChange={onChange} required error={fieldErrors.name} />
-              <Field label="Email" name="email" type="email" value={formData.email} onChange={onChange} required error={fieldErrors.email} />
-              <Field label="Company / Agency name" name="company" value={formData.company} onChange={onChange} error={fieldErrors.company} />
+              <Field label={t("contact.form.name")} name="name" value={formData.name} onChange={onChange} required error={fieldErrors.name} />
+              <Field label={t("contact.form.email")} name="email" type="email" value={formData.email} onChange={onChange} required error={fieldErrors.email} />
+              <Field label={t("contact.form.company")} name="company" value={formData.company} onChange={onChange} error={fieldErrors.company} />
               <div>
                 <label className="font-mono-ui text-xs text-text-tertiary">
-                  About your project *
+                  {t("contact.form.project")} *
                 </label>
                 <textarea
                   name="message"
@@ -170,23 +170,23 @@ export function Contact() {
                   maxLength={2000}
                   value={formData.message}
                   onChange={(e) => onChange("message", e.target.value)}
-                  placeholder="What are you building? What's the challenge? What's the deadline?"
+                  placeholder={t("contact.form.projectPlaceholder")}
                   className="mt-2 w-full rounded-md border border-[var(--border)] bg-bg px-3 py-2 text-sm text-text-primary outline-none transition-colors placeholder:text-text-tertiary focus:border-accent"
                 />
                 {fieldErrors.message && <p className="mt-1 text-xs text-red-400">{fieldErrors.message}</p>}
               </div>
               <div>
-                <label className="font-mono-ui text-xs text-text-tertiary">Budget range</label>
+                <label className="font-mono-ui text-xs text-text-tertiary">{t("contact.form.budget")}</label>
                 <select
                   name="budget"
                   value={formData.budget}
                   onChange={(e) => onChange("budget", e.target.value)}
                   className="mt-2 w-full rounded-md border border-[var(--border)] bg-bg px-3 py-2 text-sm text-text-primary outline-none focus:border-accent"
                 >
-                  <option value="">Select budget range</option>
-                  <option value="min_18k">Minimum engagement: 18K AMD</option>
-                  <option value="18_50k">18K–$50K AMD</option>
-                  <option value="over_50k">Over $50K AMD</option>
+                  <option value="">{t("contact.form.budgetSelect")}</option>
+                  <option value="min_18k">{t("contact.form.budgetOption1")}</option>
+                  <option value="18_50k">{t("contact.form.budgetOption2")}</option>
+                  <option value="over_50k">{t("contact.form.budgetOption3")}</option>
                 </select>
                 {fieldErrors.budget && <p className="mt-1 text-xs text-red-400">{fieldErrors.budget}</p>}
               </div>
@@ -205,18 +205,18 @@ export function Contact() {
               >
                 {status === "submitting" ? (
                   <span className="flex items-center justify-center gap-2">
-                    <Loader2 size={16} className="animate-spin" /> Sending…
+                    <Loader2 size={16} className="animate-spin" /> {t("contact.form.sending")}
                   </span>
                 ) : (
-                  "Send Message →"
+                  t("contact.form.submit")
                 )}
               </MagneticButton>
             </div>
 
             <div className="mt-8 space-y-2 border-t border-[var(--border)] pt-6 text-sm text-text-secondary">
-              <div><span className="text-accent">1.</span> I review your brief and reply within 24 hours via email or WhatsApp.</div>
-              <div><span className="text-accent">2.</span> If it's a good fit, we discuss details over email, WhatsApp or call.</div>
-              <div><span className="text-accent">3.</span> You receive a written, fixed-price proposal in less than 3 days.</div>
+              <div><span className="text-accent">1.</span> {t("contact.process.step1")}</div>
+              <div><span className="text-accent">2.</span> {t("contact.process.step2")}</div>
+              <div><span className="text-accent">3.</span> {t("contact.process.step3")}</div>
             </div>
           </motion.form>
         </div>

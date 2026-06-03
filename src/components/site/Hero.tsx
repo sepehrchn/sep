@@ -20,7 +20,7 @@ export function Hero() {
 
       <div className="relative mx-auto w-full max-w-7xl px-6">
         <div className="font-mono-ui text-sm text-accent">
-          <Typewriter text={`// ${t("hero.title")} — Yerevan, Armenia`} />
+          <Typewriter text={t("hero.tagline")} />
         </div>
 
         <motion.h1
@@ -30,11 +30,11 @@ export function Hero() {
           transition={{ delay: 0.4 }}
           className="font-display mt-6 text-5xl font-bold leading-[0.95] tracking-tight md:text-7xl"
         >
-          Ship faster.
+          {t("hero.headline1")}
           <br />
-          Pay less.
+          {t("hero.headline2")}
           <br />
-          <span className="text-accent">No middlemen.</span>
+          <span className="text-accent">{t("hero.headline3")}</span>
         </motion.h1>
 
         <motion.p
@@ -44,7 +44,7 @@ export function Hero() {
           transition={{ delay: 0.6 }}
           className="mt-8 max-w-[580px] text-lg text-text-secondary md:text-xl"
         >
-          {t("hero.subtitle")}
+          {t("hero.description")}
         </motion.p>
 
         <motion.div
@@ -58,7 +58,7 @@ export function Hero() {
             <span className="absolute inset-0 animate-ping rounded-full bg-green-400 opacity-75" />
             <span className="relative h-2 w-2 rounded-full bg-green-400" />
           </span>
-          <span className="text-sm text-text-secondary">Available for new projects</span>
+          <span className="text-sm text-text-secondary">{t("hero.available")}</span>
         </motion.div>
 
         <motion.div
@@ -72,13 +72,13 @@ export function Hero() {
             onClick={() => scrollTo("#work")}
             className="rounded-md bg-accent px-6 py-3 text-sm font-medium text-white shadow-[0_0_24px_var(--accent-glow)] transition-colors hover:bg-accent-hover"
           >
-            {t("nav.work")} →
+            {t("hero.seeWork")} →
           </MagneticButton>
           <button
             onClick={() => scrollTo("#contact")}
             className="text-sm text-text-secondary underline-offset-4 hover:text-text-primary hover:underline"
           >
-            {t("nav.contact")}
+            {t("hero.getInTouch")}
           </button>
         </motion.div>
       </div>

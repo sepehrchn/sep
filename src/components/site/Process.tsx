@@ -1,29 +1,15 @@
 import { motion } from "framer-motion";
-
-const steps = [
-  {
-    n: "01",
-    title: "Discovery",
-    body: "Let's understand your needs, timeline, and constraints. Discuss your project requirements and budget. Assessment of fit and scope.",
-  },
-  {
-    n: "02",
-    title: "Proposal & Contract",
-    body: "Written proposal: fixed scope, fixed price, fixed deadline. No range estimates. You know the cost before a line is written. Agencies: white-label + NDA available.",
-  },
-  {
-    n: "03",
-    title: "Development",
-    body: "Weekly check-ins. Working code deployed to staging every sprint. Direct access to me — no project manager between us.",
-  },
-  {
-    n: "04",
-    title: "Handoff & Support",
-    body: "Deployed to production. Full documentation. 30-day post-launch support included. You own everything: code, repo, domain, accounts.",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export function Process() {
+  const { t } = useTranslation();
+
+  const steps = t("process.steps", { returnObjects: true }) as Array<{
+    number: string;
+    title: string;
+    description: string;
+  }>;
+
   return (
     <section id="process" className="py-28">
       <div className="mx-auto max-w-7xl px-6">
@@ -33,10 +19,10 @@ export function Process() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="font-mono-ui text-sm text-accent">// how we work</div>
-          <h2 className="font-display mt-4 text-4xl font-bold md:text-5xl">Clear Process. Zero Surprises.</h2>
+          <div className="font-mono-ui text-sm text-accent">{t("process.label")}</div>
+          <h2 className="font-display mt-4 text-4xl font-bold md:text-5xl">{t("process.title")}</h2>
           <p className="mt-4 max-w-2xl text-base text-text-secondary md:text-lg">
-            Whether you're an agency subcontracting or a business starting a project.
+            {t("process.description")}
           </p>
         </motion.div>
 
@@ -45,7 +31,7 @@ export function Process() {
           <div className="space-y-12">
             {steps.map((s, i) => (
               <motion.div
-                key={s.n}
+                key={s.number}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
@@ -53,9 +39,9 @@ export function Process() {
                 className="relative"
               >
                 <div className="absolute -left-[26px] top-1.5 h-3 w-3 rounded-full bg-accent shadow-[0_0_12px_var(--accent-glow)] md:-left-[34px]" />
-                <div className="font-mono-ui text-xs text-accent">{s.n}</div>
+                <div className="font-mono-ui text-xs text-accent">{s.number}</div>
                 <h3 className="font-display mt-1 text-2xl font-semibold">{s.title}</h3>
-                <p className="mt-2 max-w-2xl text-sm leading-relaxed text-text-secondary md:text-base">{s.body}</p>
+                <p className="mt-2 max-w-2xl text-sm leading-relaxed text-text-secondary md:text-base">{s.description}</p>
               </motion.div>
             ))}
           </div>

@@ -1,13 +1,16 @@
 import { Linkedin, Github, Mail } from "lucide-react";
-
-const links = [
-  { label: "Work", href: "#work" },
-  { label: "Skills", href: "#skills" },
-  { label: "Process", href: "#process" },
-  { label: "Contact", href: "#contact" },
-];
+import { useTranslation } from "react-i18next";
 
 export function Footer() {
+  const { t } = useTranslation();
+
+  const links = [
+    { label: t("footer.work"), href: "#work" },
+    { label: t("footer.about"), href: "#about" },
+    { label: t("footer.process"), href: "#process" },
+    { label: t("footer.contact"), href: "#contact" },
+  ];
+
   return (
     <footer className="border-t border-[var(--border)] bg-bg-card/50">
       <div className="mx-auto max-w-7xl px-6 py-12">
@@ -16,7 +19,7 @@ export function Footer() {
             <a href="#" className="font-mono-ui text-base text-accent">
               sepehr_
             </a>
-            <p className="mt-2 text-sm text-text-tertiary">Built in Yerevan. Deployed everywhere.</p>
+            <p className="mt-2 text-sm text-text-tertiary">{t("footer.tagline")}</p>
           </div>
 
           <div className="flex flex-wrap items-center justify-start gap-6 md:justify-center">
@@ -48,7 +51,7 @@ export function Footer() {
         </div>
 
         <div className="mt-10 border-t border-[var(--border)] pt-6 text-center text-xs text-text-tertiary">
-          © 2026 Sepehr Jokanian · hello@sepehr.am
+          {t("footer.copyright")}
         </div>
       </div>
     </footer>

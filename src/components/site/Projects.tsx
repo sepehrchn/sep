@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Github, ExternalLink } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { TiltCard } from "./TiltCard";
 
 interface Project {
@@ -137,6 +138,8 @@ function ScreenshotCarousel({ shots }: { shots: { src: string; alt: string }[] }
 }
 
 export function Projects() {
+  const { t } = useTranslation();
+  const projects = t("projects.items", { returnObjects: true }) as Project[];
   return (
     <section id="work" className="py-28">
       <div className="mx-auto max-w-7xl px-6">
@@ -146,8 +149,8 @@ export function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="font-mono-ui text-sm text-accent">// selected work</div>
-          <h2 className="font-display mt-4 text-4xl font-bold md:text-5xl">Real Code. Real Demos.</h2>
+          <div className="font-mono-ui text-sm text-accent">// {t("projects.label")}</div>
+          <h2 className="font-display mt-4 text-4xl font-bold md:text-5xl">{t("projects.title")}</h2>
           <p className="mt-4 text-base text-text-secondary md:text-lg">
             These aren't mockups. Click the links — they actually load.
           </p>

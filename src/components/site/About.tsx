@@ -1,22 +1,11 @@
 import { motion } from "framer-motion";
-
-const focus = [
-  "Full-stack implementation from Figma or spec",
-  "3D WebGL interfaces (Three.js + React Three Fiber)",
-  "Practical AI integration backed by genuine ML understanding",
-  "Multi-language deployment: EN, HY, RU, FA, DE, FR",
-];
-
-const sidebar = [
-  ["Based in", "Yerevan, Armenia 🇦🇲"],
-  ["Availability", "Open to new work"],
-  ["Response", "Within 24 hours"],
-  ["Timezone", "GMT+4 (Armenia Standard)"],
-  ["Degree", "B.Sc. Artificial Intelligence"],
-  ["Languages", "English · Armenian · Farsi"],
-];
+import { useTranslation } from "react-i18next";
 
 export function About() {
+  const { t } = useTranslation();
+
+  const focus = t("about.focus", { returnObjects: true }) as string[];
+  const sidebar = t("about.sidebar", { returnObjects: true }) as Array<[string, string]>;
   return (
     <section id="about" className="py-28">
       <div className="mx-auto max-w-7xl px-6">
@@ -27,24 +16,14 @@ export function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="font-mono-ui text-sm text-accent">// about</div>
+            <div className="font-mono-ui text-sm text-accent">// {t("about.label")}</div>
             <h2 className="font-display mt-4 text-4xl font-bold leading-tight md:text-5xl">
-              One Developer. Full Ownership.
+              {t("about.title")}
             </h2>
             <div className="mt-6 space-y-4 text-base leading-relaxed text-text-secondary md:text-lg">
-              <p>
-                I'm Sepehr — a full-stack developer based in Yerevan, Armenia, with a Bachelor's degree in Artificial
-                Intelligence (ML + NLP focus). I build production websites and internal tools for agencies and
-                businesses worldwide.
-              </p>
-              <p>
-                I work solo by design. It means you deal directly with the person writing your code. No account
-                managers, no handoff to juniors, no communication overhead. What we agree on is what gets built.
-              </p>
-              <p>
-                My AI degree isn't a talking point — it's the reason my integrations work properly instead of just
-                barely working.
-              </p>
+              <p>{t("about.description1")}</p>
+              <p>{t("about.description2")}</p>
+              <p>{t("about.description3")}</p>
             </div>
 
             <ul className="mt-8 space-y-2">
@@ -64,11 +43,11 @@ export function About() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="rounded-xl border border-[var(--border)] bg-bg-card p-6"
           >
-            <div className="font-mono-ui text-xs uppercase tracking-wider text-accent">// snapshot</div>
+            <div className="font-mono-ui text-xs uppercase tracking-wider text-accent">// {t("about.snapshotLabel")}</div>
             <dl className="mt-5 divide-y divide-[var(--border)]">
               {sidebar.map(([k, v]) => (
                 <div key={k} className="flex items-start justify-between gap-4 py-3">
-                  <dt className="font-mono-ui text-xs text-text-tertiary">{k}</dt>
+                  <dt className="font-mono-ui text-xs text-text-tertiary">{t(`about.sidebar.${k}`)}</dt>
                   <dd className="text-right text-sm text-text-primary">{v}</dd>
                 </div>
               ))}

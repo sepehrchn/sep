@@ -1,15 +1,12 @@
 import { motion } from "framer-motion";
-
-const languages = [
-  { code: "EN", name: "English" },
-  { code: "DE", name: "German" },
-  { code: "FR", name: "French" },
-  { code: "ES", name: "Spanish" },
-  { code: "IT", name: "Italian" },
-  { code: "PT", name: "Portuguese" },
-];
+import { useTranslation } from "react-i18next";
 
 export function MultilingualBand() {
+  const { t } = useTranslation();
+  const languages = t("multilingual.languages", { returnObjects: true }) as Array<{
+    code: string;
+    name: string;
+  }>;
   return (
     <section className="py-20">
       <div className="mx-auto max-w-7xl px-6">
@@ -21,14 +18,13 @@ export function MultilingualBand() {
           className="rounded-2xl border border-[var(--border)] bg-bg-card p-8 md:p-12"
         >
           <div className="font-mono-ui text-xs uppercase tracking-wider text-accent">
-            // multilingual delivery
+            // {t("multilingual.label")}
           </div>
           <h3 className="font-display mt-3 text-2xl font-bold md:text-3xl">
-            Production sites shipped in 5+ languages.
+            {t("multilingual.title")}
           </h3>
           <p className="mt-3 max-w-3xl text-base text-text-secondary">
-            SEO-optimised per market. Full localisation — copy, currency, legal.
-            Including complex right-to-left (RTL) layout engines with sub-180ms page-load transitions.
+            {t("multilingual.description")}
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">

@@ -1,12 +1,234 @@
 {
   "nav": {
-    "about": "About",
-    "services": "Services",
     "work": "Work",
+    "about": "About",
     "contact": "Contact"
   },
   "hero": {
     "title": "Ai Engineer - Full-stack developer",
-    "subtitle": "I design and code beautifully simple things, and I love what I do."
+    "tagline": "// AI Engineer - Full-stack Developer — Yerevan, Armenia",
+    "headline1": "Ship faster.",
+    "headline2": "Pay less.",
+    "headline3": "No middlemen.",
+    "description": "One full-stack developer who handles everything — from design to deployment. Direct communication, honest pricing, and results that speak louder than promises.",
+    "available": "Available for new projects",
+    "seeWork": "See My Work",
+    "getInTouch": "Get in Touch"
+  },
+  "valueStrip": {
+    "daysLabel": "Days to Prototype",
+    "daysValue": "< 3 days",
+    "engagementLabel": "Minimum Engagement",
+    "engagementValue": "18K AMD",
+    "rtlLabel": "RTL Support",
+    "rtlValue": "EN · FA · HY · RU"
+  },
+  "services": {
+    "label": "// what i build",
+    "title": "Three Ways I Can Help",
+    "description": "Most projects combine two or more of these. I work with agencies and businesses.",
+    "items": [
+      {
+        "title": "Figma → Production",
+        "description": "I build your designs into fast, responsive websites with pixel-accurate implementation. Clean code your team can maintain. White-label available for agencies — your client never needs to know."
+      },
+      {
+        "title": "Workflow Automation",
+        "description": "Connect your CRM, forms, email, and internal systems. Eliminate the repetitive manual tasks draining your team's time. No-code where it fits, custom code where it doesn't."
+      },
+      {
+        "title": "AI Features That Actually Ship",
+        "description": "I have an AI degree backing every integration I build — chatbots, content generation, lead qualification, document processing. Real implementations, not copy-pasted tutorials."
+      }
+    ]
+  },
+  "process": {
+    "label": "// how we work",
+    "title": "Clear Process. Zero Surprises.",
+    "description": "Whether you're an agency subcontracting or a business starting a project.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Discovery",
+        "description": "Let's understand your needs, timeline, and constraints. Discuss your project requirements and budget. Assessment of fit and scope."
+      },
+      {
+        "number": "02",
+        "title": "Proposal & Contract",
+        "description": "Written proposal: fixed scope, fixed price, fixed deadline. No range estimates. You know the cost before a line is written. Agencies: white-label + NDA available."
+      },
+      {
+        "number": "03",
+        "title": "Development",
+        "description": "Weekly check-ins. Working code deployed to staging every sprint. Direct access to me — no project manager between us."
+      },
+      {
+        "number": "04",
+        "title": "Handoff & Support",
+        "description": "Deployed to production. Full documentation. 30-day post-launch support included. You own everything: code, repo, domain, accounts."
+      }
+    ]
+  },
+  "about": {
+    "label": "about",
+    "title": "One Developer. Full Ownership.",
+    "description1": "I'm Sepehr — a full-stack developer based in Yerevan, Armenia, with a Bachelor's degree in Artificial Intelligence (ML + NLP focus). I build production websites and internal tools for agencies and businesses worldwide.",
+    "description2": "I work solo by design. It means you deal directly with the person writing your code. No account managers, no handoff to juniors, no communication overhead. What we agree on is what gets built.",
+    "description3": "My AI degree isn't a talking point — it's the reason my integrations work properly instead of just barely working.",
+    "focus": [
+      "Full-stack implementation from Figma or spec",
+      "3D WebGL interfaces (Three.js + React Three Fiber)",
+      "Practical AI integration backed by genuine ML understanding",
+      "Multi-language deployment: EN, HY, RU, FA, DE, FR"
+    ],
+    "snapshotLabel": "snapshot",
+    "sidebar": {
+      "Based in": "Yerevan, Armenia 🇦🇲",
+      "Availability": "Open to new work",
+      "Response": "Within 24 hours",
+      "Timezone": "GMT+4 (Armenia Standard)",
+      "Degree": "B.Sc. Artificial Intelligence",
+      "Languages": "English · Armenian · Farsi"
+    }
+  },
+  "contact": {
+    "label": "let's talk",
+    "title": "Ready to Build Something?",
+    "description": "Whether you're an agency looking for a reliable subcontractor or a company that needs a better product — I respond to every message within 24 hours.",
+    "directLabel": "Contact me directly:",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "call": "Call",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "personalNote": "I check messages personally — not a bot, not a VA.",
+    "form": {
+      "name": "Your name",
+      "email": "Email",
+      "company": "Company / Agency name",
+      "project": "About your project",
+      "projectPlaceholder": "What are you building? What's the challenge? What's the deadline?",
+      "budget": "Budget range",
+      "budgetSelect": "Select budget range",
+      "budgetOption1": "Minimum engagement: 18K AMD",
+      "budgetOption2": "18K–$50K AMD",
+      "budgetOption3": "Over $50K AMD",
+      "submit": "Send Message →",
+      "sending": "Sending…"
+    },
+    "success": {
+      "title": "Got it.",
+      "description": "I'll review your brief and respond within 24 hours. If it sounds like a good fit, I'll suggest a time for a quick call.",
+      "sendAnother": "Send another inquiry"
+    },
+    "process": {
+      "step1": "I review your brief and reply within 24 hours via email or WhatsApp.",
+      "step2": "If it's a good fit, we discuss details over email, WhatsApp or call.",
+      "step3": "You receive a written, fixed-price proposal in less than 3 days."
+    }
+  },
+  "projects": {
+    "label": "selected work",
+    "title": "Real Code. Real Demos.",
+    "items": [
+      {
+        "url": "arianasepehr.vercel.app",
+        "bgClass": "bg-gradient-to-br from-[#1a2030] via-[#0f1520] to-[#0a0e18]",
+        "centerText": "B2B Export Platform",
+        "category": "Full-Stack · Next.js · AI Integration",
+        "title": "Ariana Global Trade — B2B Export Portal",
+        "description": "A premium B2B showcase for an agricultural commodities exporter targeting international wholesale importers. Built with genuine engineering depth: multi-language support including full Persian RTL layout switching, a dynamic volume-based pricing calculator, and an OpenAI-powered pre-qualification chatbot that routes leads automatically.",
+        "highlights": [
+          "RTL/LTR layout switching under 180ms (EN · FA · HY)",
+          "AI chat concierge with OpenAI API + graceful fallback handling",
+          "Volume-tier pricing calculator running entirely client-side",
+          "Responsive across 5 viewport breakpoints with sub-180ms page load"
+        ],
+        "tags": ["Next.js 14", "TypeScript", "Tailwind CSS", "Framer Motion", "OpenAI API", "RTL Support", "React 19", "Vercel"],
+        "github": "https://github.com/sepehrjo/ariana-b2b-export",
+        "demo": "https://arianasepehr.vercel.app",
+        "screenshots": [
+          { "src": "/images/Ariana-Image/preview-en.png", "alt": "Ariana homepage in English" },
+          { "src": "/images/Ariana-Image/languages-support.png", "alt": "Multi-language support" },
+          { "src": "/images/Ariana-Image/chatbot-sensitivity.png", "alt": "AI chatbot instant quote" },
+          { "src": "/images/Ariana-Image/quote-inquiry.png", "alt": "Quote inquiry form" }
+        ]
+      },
+      {
+        "url": "adart-alpha.vercel.app",
+        "bgClass": "bg-[#0B0B0B]",
+        "centerText": "Creative Agency Website",
+        "category": "Frontend · React 19 · Three.js · WebGL",
+        "title": "FORMA Studio — Art Direction & Advertising",
+        "description": "A premium showcase website for FORMA, an avant-garde art direction and advertising studio — built to demonstrate advanced frontend engineering. The centrepiece is a real-time Three.js WebGL scene in the hero that pauses GPU rendering via IntersectionObserver when off-screen, maintaining 60fps across all device tiers. The site is fully multilingual across four scripts — including dynamic Persian RTL — built entirely in CSS Modules.",
+        "highlights": [
+          "Three.js WebGL 3D hero with IntersectionObserver render-pausing — zero GPU/CPU usage when scrolled out of view",
+          "Full RTL/LTR layout engine for EN · RU · FA · HY via i18next with mirrored grid, alignment, and absolute positioning",
+          "Zero-Tailwind CSS Modules architecture — fully scoped styles with no global override risk across every component"
+        ],
+        "tags": ["React 19", "TypeScript", "Three.js", "@react-three/fiber", "Framer Motion", "i18next", "RTL Support", "CSS Modules", "Vite"],
+        "github": "https://github.com/sepehrjo/Ad_Art_Web",
+        "demo": "https://adart-alpha.vercel.app",
+        "screenshots": [
+          { "src": "/images/Forma-Image/hero_en.png", "alt": "FORMA hero with Three.js WebGL scene" },
+          { "src": "/images/Forma-Image/portfolio.png", "alt": "FORMA portfolio section" },
+          { "src": "/images/Forma-Image/journal.png", "alt": "FORMA journal" },
+          { "src": "/images/Forma-Image/contact.png", "alt": "FORMA contact section" },
+          { "src": "/images/Forma-Image/assistant_active.png", "alt": "FORMA AI assistant" }
+        ]
+      }
+    ]
+  },
+  "skills": {
+    "label": "technical capabilities",
+    "title": "The Stack I Ship With",
+    "groups": [
+      {
+        "label": "Frontend",
+        "items": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "HTML/CSS", "Vite"]
+      },
+      {
+        "label": "3D & Visual",
+        "items": ["Three.js", "@react-three/fiber", "@react-three/drei", "CSS Modules"]
+      },
+      {
+        "label": "Backend & API",
+        "items": ["Node.js", "REST APIs", "Next.js Server Actions", "Zod", "PostgreSQL"]
+      },
+      {
+        "label": "AI & Automation",
+        "items": ["OpenAI API", "LLM Integration", "Zapier", "Make", "Webhooks"]
+      },
+      {
+        "label": "Internationalisation",
+        "items": ["i18next", "react-i18next", "RTL/LTR Layouts", "Persian", "Armenian", "Russian"]
+      },
+      {
+        "label": "Deploy & Tools",
+        "items": ["Vercel", "GitHub", "Git", "Figma", "Docker"]
+      }
+    ]
+  },
+  "multilingual": {
+    "label": "multilingual delivery",
+    "title": "Production sites shipped in 5+ languages.",
+    "description": "SEO-optimised per market. Full localisation — copy, currency, legal. Including complex right-to-left (RTL) layout engines with sub-180ms page-load transitions.",
+    "languages": [
+      { "code": "EN", "name": "English" },
+      { "code": "DE", "name": "German" },
+      { "code": "FR", "name": "French" },
+      { "code": "ES", "name": "Spanish" },
+      { "code": "IT", "name": "Italian" },
+      { "code": "PT", "name": "Portuguese" }
+    ]
+  },
+  "footer": {
+    "tagline": "Built in Yerevan. Deployed everywhere.",
+    "copyright": "© 2026 Sepehr Jokanian · hello@sepehr.am",
+    "work": "Work",
+    "skills": "Skills",
+    "process": "Process",
+    "about": "About",
+    "contact": "Contact"
   }
 }
