@@ -5,7 +5,8 @@ export function About() {
   const { t } = useTranslation();
 
   const focus = t("about.focus", { returnObjects: true }) as string[];
-  const sidebar = t("about.sidebar", { returnObjects: true }) as Array<[string, string]>;
+  const sidebarObj = t("about.sidebar", { returnObjects: true }) as Record<string, string>;
+  const sidebar = Object.entries(sidebarObj);
   return (
     <section id="about" className="py-28">
       <div className="mx-auto max-w-7xl px-6">
@@ -47,7 +48,7 @@ export function About() {
             <dl className="mt-5 divide-y divide-[var(--border)]">
               {sidebar.map(([k, v]) => (
                 <div key={k} className="flex items-start justify-between gap-4 py-3">
-                  <dt className="font-mono-ui text-xs text-text-tertiary">{t(`about.sidebar.${k}`)}</dt>
+                  <dt className="font-mono-ui text-xs text-text-tertiary">{k}</dt>
                   <dd className="text-right text-sm text-text-primary">{v}</dd>
                 </div>
               ))}
