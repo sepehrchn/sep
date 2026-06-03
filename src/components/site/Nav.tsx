@@ -1,19 +1,20 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { MagneticButton } from "./MagneticButton";
-
-const links = [
-  { label: "Work", href: "#work" },
-  { label: "Skills", href: "#skills" },
-  { label: "Process", href: "#process" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
-];
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export function Nav() {
+  const { t } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+
+  const links = [
+    { label: t("nav.work"), href: "#work" },
+    { label: t("nav.about"), href: "#about" },
+    { label: t("nav.contact"), href: "#contact" },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -38,6 +39,8 @@ export function Nav() {
         </a>
 
         <div className="hidden items-center gap-8 md:flex">
+          <LanguageSwitcher />
+          <div className="h-6 w-px bg-gray-700" />
           {links.map((l) => (
             <button
               key={l.href}
@@ -54,7 +57,7 @@ export function Nav() {
             onClick={() => scrollTo("#contact")}
             className="rounded-md border border-accent bg-accent/10 px-4 py-2 text-sm text-text-primary transition-colors hover:bg-accent/20"
           >
-            Let's Talk →
+            {t("nav.contact")} →
           </MagneticButton>
         </div>
 
@@ -72,7 +75,8 @@ export function Nav() {
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
             className="fixed inset-y-0 right-0 z-50 w-72 bg-bg-card border-l border-[var(--border)] p-6 md:hidden"
           >
-            <div className="flex justify-end">
+            <div className="flex justify-between items-center">
+              <LanguageSwitcher />
               <button onClick={() => setOpen(false)} aria-label="Close">
                 <X size={22} />
               </button>
@@ -87,7 +91,7 @@ export function Nav() {
                 onClick={() => scrollTo("#contact")}
                 className="mt-4 rounded-md border border-accent bg-accent/10 px-4 py-3 text-sm"
               >
-                Let's Talk →
+                {t("nav.contact")} →
               </button>
             </div>
           </motion.div>

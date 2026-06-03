@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { HeroParticles } from "./HeroParticles";
 import { Typewriter } from "./Typewriter";
 import { MagneticButton } from "./MagneticButton";
@@ -9,6 +10,7 @@ const fadeUp = {
 } as const;
 
 export function Hero() {
+  const { t } = useTranslation();
   const scrollTo = (id: string) => document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
 
   return (
@@ -18,7 +20,7 @@ export function Hero() {
 
       <div className="relative mx-auto w-full max-w-7xl px-6">
         <div className="font-mono-ui text-sm text-accent">
-          <Typewriter text="// AI Engineer - Full-stack Developer — Yerevan, Armenia" />
+          <Typewriter text={`// ${t("hero.title")} — Yerevan, Armenia`} />
         </div>
 
         <motion.h1
@@ -42,8 +44,7 @@ export function Hero() {
           transition={{ delay: 0.6 }}
           className="mt-8 max-w-[580px] text-lg text-text-secondary md:text-xl"
         >
-          One full-stack developer who handles everything — from design to deployment.
-          Direct communication, honest pricing, and results that speak louder than promises.
+          {t("hero.subtitle")}
         </motion.p>
 
         <motion.div
@@ -71,13 +72,13 @@ export function Hero() {
             onClick={() => scrollTo("#work")}
             className="rounded-md bg-accent px-6 py-3 text-sm font-medium text-white shadow-[0_0_24px_var(--accent-glow)] transition-colors hover:bg-accent-hover"
           >
-            See My Work →
+            {t("nav.work")} →
           </MagneticButton>
           <button
             onClick={() => scrollTo("#contact")}
             className="text-sm text-text-secondary underline-offset-4 hover:text-text-primary hover:underline"
           >
-            Get in Touch
+            {t("nav.contact")}
           </button>
         </motion.div>
       </div>
